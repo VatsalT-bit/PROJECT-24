@@ -5,6 +5,7 @@ const Body = Matter.Body;
 
 var box1;
 var canvas;
+var ground;
 
 function preload()
 {
@@ -16,18 +17,17 @@ function setup() {
 	engine= Engine.create();
     world = engine.world;
 
-
 	engine = Engine.create();
 	world = engine.world;
 
 	//Create the Bodies Here.
      
-	 box1=new Box(700,320,200,200);
+	 box1=new Box(700,320,90,95);
+	 ground = new Ground(660,400,795,10);
     
 	Engine.run(engine);
   
 }
-
 
 function draw() {
   Engine.update(engine);
@@ -35,6 +35,8 @@ function draw() {
   
   drawSprites();
   box1.display();
+  ground.display();
+
 }
 
 
